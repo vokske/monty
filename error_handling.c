@@ -8,7 +8,7 @@ void usage_error(void)
 
 void file_error(char *filename)
 {
-	fprintf(stderr, "Error: Can't open the file %s\n", filename);
+	fprintf(stderr, "Error: Can't open file %s\n", filename);
 	exit(EXIT_FAILURE);
 }
 
