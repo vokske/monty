@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	char *opcode;
 	char *arg;
+	int i;
 
 	if (argc != 2)
 		usage_error();
@@ -38,9 +39,16 @@ int main(int argc, char *argv[])
 		if (strcmp(opcode, "push") == 0)
 		{
 			arg = strtok(NULL, " \n\t");
-			if (arg == NULL || !isdigit(arg[0]))
+			if (arg == NULL || (*arg != '-' && !isdigit(*arg)))
 			{
 				push_usage_error(line_number);
+			}
+			for (i = 1; arg[i] != '\0'; i++)
+			{
+				if (!isdigit(arg[i]))
+				{
+					push_usage_error(line_number);
+				}
 			}
 			push(&stack, line_number, atoi(arg));
 		}
