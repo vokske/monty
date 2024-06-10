@@ -75,3 +75,15 @@ void pint_error(unsigned int line_number)
 	fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * pop_error: Print an error message to stderr if the stack is empty
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void pop_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+	exit(EXIT_FAILURE);
+}
