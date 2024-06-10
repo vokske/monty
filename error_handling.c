@@ -63,3 +63,15 @@ void push_usage_error(unsigned int line_number)
 	fprintf(stderr, "L%u: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * pint_error - Prints an error message to stderr if the stack is empty
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void pint_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: can't pint, stack empty", line_number);
+	exit(EXIT_FAILURE);
+}
