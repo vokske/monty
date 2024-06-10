@@ -7,8 +7,6 @@
  *
  * Return: Always 0 (successful)
  */
-extern int push_arg;
-
 int main(int argc, char *argv[])
 {
 	FILE *file;
@@ -28,7 +26,7 @@ int main(int argc, char *argv[])
 	if (file == NULL)
 		file_error(argv[1]);
 
-	while((read = getline(&line, &len, file)) != -1)
+	while ((read = getline(&line, &len, file)) != -1)
 	{
 		line_number++;
 		opcode = strtok(line, " \n\t");

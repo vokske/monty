@@ -4,7 +4,7 @@
  * push - push an element to the stack
  * @stack: pointer to the stack
  * @line_number: current line number being processed
- * @value: integer to be pushed into the stack
+ * @arg: integer to be pushed into the stack
  *
  * Return: Nothing
  */
@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number, int arg)
 {
 	stack_t *new_node;
 	(void) line_number;
-	
+
 	new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)

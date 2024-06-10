@@ -10,7 +10,8 @@
  * Return: Nothing
  */
 
-void execute_instruction(char *opcode, stack_t **stack, unsigned int line_number)
+void execute_instruction(char *opcode, stack_t **stack,
+			 unsigned int line_number)
 {
 	instruction_t instructions[] = {
 		{"pall", pall},
