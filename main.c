@@ -15,17 +15,14 @@ int main(int argc, char *argv[])
 	ssize_t read;
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
-	char *opcode;
-	char *arg;
-	int i;
+	char *opcode, *arg;
 
 	if (argc != 2)
 		usage_error();
-
 	file = fopen(argv[1], "r");
+
 	if (file == NULL)
 		file_error(argv[1]);
-
 	while ((read = getline(&line, &len, file)) != -1)
 	{
 		line_number++;
@@ -37,18 +34,7 @@ int main(int argc, char *argv[])
 		if (strcmp(opcode, "push") == 0)
 		{
 			arg = strtok(NULL, " \n\t");
-			if (arg == NULL || (*arg != '-' && !isdigit(*arg)))
-			{
-				push_usage_error(line_number);
-			}
-			for (i = 1; arg[i] != '\0'; i++)
-			{
-				if (!isdigit(arg[i]))
-				{
-					push_usage_error(line_number);
-				}
-			}
-			push(&stack, line_number, atoi(arg));
+			check_push(&stack, arg, line_number);
 		}
 		else
 		{

@@ -47,5 +47,6 @@ void unknown_instruction_error(unsigned int line_number, char *opcode);
 void push_usage_error(unsigned int line_number);
 void execute_instruction(char *opcode, stack_t **stack,
 			 unsigned int line_number);
+void check_push(stack_t **stack, char *arg, unsigned int line_number);
 
 #endif
