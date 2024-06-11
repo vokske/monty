@@ -152,3 +152,16 @@ void zero_div_error(unsigned int line_number)
 	fprintf(stderr, "L%u: division by zero\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * mul_error - Prints an error message to stderr
+ * if the stack contains less than two elements
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void mul_error(unsigned int line_number)
+{
+        fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+}
