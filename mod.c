@@ -13,7 +13,7 @@ void mod(stack_t **stack, unsigned int line_number)
 	stack_t *temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		div_error(line_number);
+		mod_error(line_number);
 	if ((*stack)->n == 0)
 		zero_div_error(line_number);
 	temp = *stack;
