@@ -13,9 +13,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	(void) line_number;
 
-	if (current == NULL)
-		putchar('\n');
-
 	while (current != NULL)
 	{
 		if (current->n == 0 || !isascii(current->n))
