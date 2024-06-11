@@ -9,21 +9,22 @@
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *top, *bottom;
-
-	top = *stack;
-	bottom = *stack;
+	stack_t *bottom, *second_bottom;
 
 	(void) line_number;
 
-	if (top == NULL || top->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return;
+
+	bottom = *stack;
 
 	while (bottom->next != NULL)
 		bottom = bottom->next;
 
-	bottom->prev = *stack;
-	(*stack)->prev = NULL;
-	(*stack)->next = bottom;
-	bottom->next = top->prev;
+	second_bottom = bottom->prev;
+	second_bottom->next = NULL;
+	bottom->next = *stack;
+	bottom->prev = NULL;
+	bottom = (*stack)->prev;
+	*stack = bottom;
 }
