@@ -126,3 +126,29 @@ void sub_error(unsigned int line_number)
 	fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * div_error - Prints an error message to stderr
+ * if the stack contains less than two elements
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void div_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: can't div, stack too short", line_number);
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * zero_div_error - Prints an error message to stderr if
+ * the top element of the stack is zero
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void zero_div_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: division by zero", line_number);
+	exit(EXIT_FAILURE);
+}
