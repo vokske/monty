@@ -165,3 +165,16 @@ void mul_error(unsigned int line_number)
         fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
         exit(EXIT_FAILURE);
 }
+
+/**
+ * mod_error - Prints an error message to stderr
+ * if the stack contains less than two elements
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void mod_error(unsigned int line_number)
+{
+        fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+        exit(EXIT_FAILURE);
+}
