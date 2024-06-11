@@ -22,8 +22,8 @@ void rotr(stack_t **stack, unsigned int line_number)
 	while (bottom->next != NULL)
 		bottom = bottom->next;
 
-	*stack = bottom->prev;
+	bottom->prev = *stack;
 	(*stack)->prev = NULL;
 	(*stack)->next = bottom;
-	bottom->next = top;
+	bottom->next = top->prev;
 }
