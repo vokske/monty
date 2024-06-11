@@ -19,4 +19,5 @@ void add(stack_t **stack, unsigned int line_number)
 	temp = top->n + top->next->n;
 	top->next->n = temp;
 	top->next->prev = top->prev;
+	top->next->prev = NULL;
 }
