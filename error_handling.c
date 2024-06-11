@@ -178,3 +178,28 @@ void mod_error(unsigned int line_number)
         fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
         exit(EXIT_FAILURE);
 }
+
+/**
+ * pchar_empty_stack - Prints an error message to stderr if the stack is empty
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void pchar_empty_stack(unsigned int line_number)
+{
+        fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+        exit(EXIT_FAILURE);
+}
+
+/**
+ * pchar_not_ascii - Prints an error message to stderr
+ * if the value on top of the stack is not in the ascii table
+ * @line_number: Current line being processed
+ *
+ * Return: Nothing
+ */
+void pchar_not_ascii(unsigned int line_number)
+{
+        fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+        exit(EXIT_FAILURE);
+}

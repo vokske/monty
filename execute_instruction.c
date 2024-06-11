@@ -24,6 +24,7 @@ void execute_instruction(char *opcode, stack_t **stack,
 		{"div", div_op},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 

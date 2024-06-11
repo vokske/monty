@@ -66,4 +66,7 @@ void mul(stack_t **stack, unsigned int line_number);
 void mul_error(unsigned int line_number);
 void mod_error(unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pchar_empty_stack(unsigned int line_number);
+void pchar_not_ascii(unsigned int line_number);
 #endif
