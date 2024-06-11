@@ -113,3 +113,16 @@ void add_error(unsigned int line_number)
 	fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * sub_error - Prints an error message to stderr
+ * if the stack contains less than two elements
+ * @line_number: Current line being processed
+ *
+ * @Return: Nothing
+ */
+void sub_error(unsigned int line_number)
+{
+	fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}
