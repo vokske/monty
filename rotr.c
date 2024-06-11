@@ -25,6 +25,6 @@ void rotr(stack_t **stack, unsigned int line_number)
 	second_bottom->next = NULL;
 	bottom->next = *stack;
 	bottom->prev = NULL;
-	bottom = (*stack)->prev;
+	(*stack)->prev = bottom;
 	*stack = bottom;
 }
