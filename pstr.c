@@ -20,11 +20,11 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	while (current != NULL)
 	{
-		value = (char)(current->n);
-		string[i++] = value;
-
 		if (current->n <= 0 || current->n > 127 )
 			break;
+		value = (char)(current->n);
+		string[i++] = value;
+		current = current->next;
 	}
 	string[i] = '\0';
 	printf("%s\n", string);
