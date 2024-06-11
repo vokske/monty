@@ -136,7 +136,7 @@ void sub_error(unsigned int line_number)
  */
 void div_error(unsigned int line_number)
 {
-	fprintf(stderr, "L%u: can't div, stack too short", line_number);
+	fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
 
@@ -149,6 +149,6 @@ void div_error(unsigned int line_number)
  */
 void zero_div_error(unsigned int line_number)
 {
-	fprintf(stderr, "L%u: division by zero", line_number);
+	fprintf(stderr, "L%u: division by zero\n", line_number);
 	exit(EXIT_FAILURE);
 }
