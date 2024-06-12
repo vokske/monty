@@ -11,7 +11,7 @@
 
 void push(stack_t **stack, unsigned int line_number, int arg)
 {
-	stack_t *new_node;
+	stack_t *new_node, *temp;
 	(void) line_number;
 
 	new_node = malloc(sizeof(stack_t));
@@ -21,8 +21,32 @@ void push(stack_t **stack, unsigned int line_number, int arg)
 
 	new_node->n = arg;
 	new_node->prev = NULL;
-	new_node->next = *stack;
-	if (*stack != NULL)
-		(*stack)->prev = new_node;
-	*stack = new_node;
+	new_node->next = NULL;
+
+	if (is_stack_mode)
+	{
+		new_node->next = *stack;
+
+		if (*stack != NULL)
+		{
+			(*stack)->prev = new_node;
+		}
+		*stack = new_node;
+	}
+	else
+	{
+		if (*stack == NULL)
+		{
+			*stack = new_node;
+		}
+		temp = *stack;
+
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = new_node;
+		new_node->prev = temp;
+		new_node->next = NULL;
+	}
 }
