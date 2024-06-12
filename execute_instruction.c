@@ -28,6 +28,8 @@ void execute_instruction(char *opcode, stack_t **stack,
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", stack_mode},
+		{"queue", queue_mode},
 		{NULL, NULL}
 	};
 

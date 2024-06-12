@@ -37,6 +37,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern int is_stack_mode;
+
 void push(stack_t **stack, unsigned int line_number, int arg);
 void pall(stack_t **stack, unsigned int line_number);
 void free_stack(stack_t *stack);
@@ -72,4 +74,6 @@ void pchar_not_ascii(unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void stack_mode(stack_t **stack, unsigned int line_number);
+void queue_mode(stack_t **stack, unsigned int line_number);
 #endif
